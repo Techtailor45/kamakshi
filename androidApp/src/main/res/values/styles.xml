@@ -1,3 +1,18 @@
 <resources>
-    <style name="AppTheme" parent="android:Theme.Material.NoActionBar"/>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+    <style name="Lato_Bold">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="BrandButtonStylePlain" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/white</item>
+        <item name="android:textColor">@color/material_grey700</item>
+    </style>
+
+    <style name="BrandButtonStyleRed" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/material_red500</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

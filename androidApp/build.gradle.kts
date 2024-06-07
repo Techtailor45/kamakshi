@@ -14,6 +14,7 @@ android {
         versionName = "1.0"
     }
     buildFeatures {
+        viewBinding = true
         compose = true
     }
     composeOptions {
@@ -41,8 +42,26 @@ android {
 dependencies {
     implementation(projects.shared)
     implementation(libs.compose.ui)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.androidx.appcompat)
+//    implementation(libs.custom.indicator)
+//    implementation(libs.android.viewpagerindicator)
+    implementation(libs.koin.android)
+    implementation(libs.android.location)
+    implementation(libs.play.services.auth)
+    implementation(libs.glide)
+    annotationProcessor(libs.glide.compiler)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.material)
+    implementation(libs.androidx.databinding.common)
+    implementation(libs.kotlinx.coroutines)
+    implementation(libs.kotlinx.serialization)
+    implementation(libs.kotlinx.serializationJson)
+    implementation(libs.google.gson)
     debugImplementation(libs.compose.ui.tooling)
 }
