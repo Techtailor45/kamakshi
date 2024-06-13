@@ -53,8 +53,7 @@ class LoginSignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        FirebaseApp.initializeApp(this)
-//        auth = FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
         binding = ActivityLoginSignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -73,11 +72,11 @@ class LoginSignUpActivity : AppCompatActivity() {
 //        fetchLandingConfig()
 
         binding.tvSignUp.setOnClickListener {
-//            showBottomSheet(shouldShowSignUp = true)
+            showBottomSheet(shouldShowSignUp = true)
         }
 
         binding.btnSignInWithGmail.setOnClickListener {
-//            showBottomSheet(shouldShowSignUp = false)
+            showBottomSheet(shouldShowSignUp = false)
         }
 
         binding.imglanguage.setOnClickListener {
@@ -215,11 +214,11 @@ class LoginSignUpActivity : AppCompatActivity() {
 //        finish()
 //    }
 
-//    private fun showBottomSheet(shouldShowSignUp: Boolean = false) {
-//        val bottomSheetFragment = LoginSignupBottomSheetFragment()
-//        bottomSheetFragment.setVisibilityState(shouldShowSignUp)
-//        bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
-//    }
+    private fun showBottomSheet(shouldShowSignUp: Boolean = false) {
+        val bottomSheetFragment = LoginSignupBottomSheetFragment()
+        bottomSheetFragment.setVisibilityState(shouldShowSignUp)
+        bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
+    }
 
     private fun initUI() {
         val sectionsPagerAdapter = SectionsPagerAdapter(

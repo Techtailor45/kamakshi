@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -55,6 +56,7 @@ dependencies {
     implementation(libs.android.location)
     implementation(libs.play.services.auth)
     implementation(libs.glide)
+    implementation(libs.firebase.auth)
     annotationProcessor(libs.glide.compiler)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.material)

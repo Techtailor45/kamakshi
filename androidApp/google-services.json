@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "449967292584",
+    "project_id": "tecktailor-f8549",
+    "storage_bucket": "tecktailor-f8549.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449967292584:android:2536a5a356f52b8f3d029d",
+        "android_client_info": {
+          "package_name": "com.example.tecktailor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ54grNAkZoeJzOg-0h34tv9DC0M3EgrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449967292584:android:53f239bc861e91b33d029d",
+        "android_client_info": {
+          "package_name": "com.example.tecktailor.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ54grNAkZoeJzOg-0h34tv9DC0M3EgrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

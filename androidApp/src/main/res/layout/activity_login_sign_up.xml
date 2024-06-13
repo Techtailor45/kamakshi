@@ -75,7 +75,7 @@
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/btn_sign_In_with_google"
+            android:layout_above="@+id/btn_sign_In_with_phone_number"
             android:layout_below="@+id/top"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
@@ -88,6 +88,25 @@
 <!--                app:selectedDotColor="@color/colorPrimary" />-->
 
 <!--        </androidx.viewpager.widget.ViewPager>-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sign_In_with_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/sign_in_with_phone_number"
+            android:lines="1"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:drawableStart="@drawable/ic_phone"
+            android:layout_above="@+id/btn_sign_In_with_google"
+            android:layout_marginTop="10sp"
+            android:layout_gravity="center_vertical"
+            android:textAllCaps="true"
+            android:textAppearance="@style/Lato_Bold"
+            android:textSize="14sp"
+            android:theme="@style/BrandButtonStylePlain"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="center" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_sign_In_with_google"

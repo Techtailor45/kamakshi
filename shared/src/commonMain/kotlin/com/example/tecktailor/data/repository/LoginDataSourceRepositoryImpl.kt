@@ -1,0 +1,5 @@
+package com.example.tecktailor.data.repository
+
+import com.example.tecktailor.domain.repository.LoginDataSourceRepository
+
+expect class LoginDataSourceRepositoryImpl: LoginDataSourceRepository
