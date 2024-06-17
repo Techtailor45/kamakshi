@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--    App Theme Colors-->
+    <color name="colorPrimary">#FF2442</color>
+    <color name="colorPrimaryVariant">#ffe5e9</color>
+    <color name="colorSecondary">#3DB2FF</color>
+    <color name="colorSecondaryVariant">#ebf7ff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="successColor">#4caf50</color>
+    <color name="successBackgroundColor">#e6f4e7</color>
+    <color name="errorColor">#ff2424</color>
+    <color name="secondaryTextColor">#737373</color>
+    <color name="dividerOrBorderColor">#bfbfbf</color>
+    <color name="screenBackgroundColor">#e0e0e0</color>
+    <color name="searchBarOrTextViewBackgroundColor">#ededed</color>
+    <color name="colorPrimaryDisabled">#ffe5e9</color>
+    <!--    App Theme Colors Ends here -->
+
     <color name="resto_app">#FF1616</color>
     <color name="transparent">#00000000</color>
     <color name="textNormalColor">#6b6b6b</color>
     <color name="colorSelectedTab">#ff9966</color>
 
     <color name="scanner_line">#00ceff</color>
+    <color name="grey2">#FF737373</color>
+    <color name="bluePrimary">#2196F3</color>
+    <color name="green">#4CAF50</color>
 
     <color name="white">#FFFFFF</color>
     <color name="md_red50">#ffffebee</color>
@@ -563,8 +584,6 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="colorPrimary">#ff1976d2</color>
     <color name="colorPrimaryDark">#214ED3</color>
     <color name="colorAccent">#42a5f5</color>
 
@@ -584,7 +603,6 @@
     <color name="dk_red">#bb3d72</color>
     <color name="dk_blue">#006ded</color>
 
-    <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
     <color name="cardview_bg">#FFFFFFFF</color>
 

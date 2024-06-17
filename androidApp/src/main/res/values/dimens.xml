@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Theme typography dimens-->
+    <dimen name="letter_spacing_0.01">0.01</dimen>
+    <dimen name="letter_spacing_0.02">0.02</dimen>
+    <dimen name="letter_spacing_0.04">0.04</dimen>
+    <dimen name="letter_spacing_0.05">0.05</dimen>
+    <dimen name="letter_spacing_0.06">0.06</dimen>
+    <dimen name="letter_spacing_0.08">0.08</dimen>
+
+    <dimen name="App_TextAppearance_Display_Medium_TextSize_45">45sp</dimen>
+    <dimen name="App_TextAppearance_Display_Small_TextSize_36">36sp</dimen>
+    <dimen name="App_TextAppearance_HeadLine_Large_TextSize_32">32sp</dimen>
+    <dimen name="App_TextAppearance_HeadLine_Medium_TextSize_28">28sp</dimen>
+    <dimen name="App_TextAppearance_HeadLine_Small_TextSize_24">24sp</dimen>
+    <dimen name="App_TextAppearance_Title_Large_TextSize_18">18sp</dimen>
+    <dimen name="App_TextAppearance_Title_Medium_TextSize_16">16sp</dimen>
+    <dimen name="App_TextAppearance_Title_Small_TextSize_14">14sp</dimen>
+    <dimen name="App_TextAppearance_Body_Large_TextSize_16">16sp</dimen>
+    <dimen name="App_TextAppearance_Body_Medium_TextSize_14">14sp</dimen>
+    <dimen name="App_TextAppearance_Body_Small_TextSize_12">12sp</dimen>
+    <dimen name="App_TextAppearance_Body_Extra_Small_TextSize_10">10sp</dimen>
+    <dimen name="App_TextAppearance_Label_Large_TextSize_14">14sp</dimen>
+    <dimen name="App_TextAppearance_Label_Medium_TextSize_12">12sp</dimen>
+    <dimen name="App_TextAppearance_Label_Small_TextSize_11">11sp</dimen>
+
+    <dimen name="App_TextAppearance_Display_Medium_LineHeight_52">52sp</dimen>
+    <dimen name="App_TextAppearance_Display_Small_LineHeight_44">44sp</dimen>
+    <dimen name="App_TextAppearance_HeadLine_Large_LineHeight_40">40sp</dimen>
+    <dimen name="App_TextAppearance_HeadLine_Medium_LineHeight_36">36sp</dimen>
+    <dimen name="App_TextAppearance_HeadLine_Small_LineHeight_32">32sp</dimen>
+    <dimen name="App_TextAppearance_Title_Large_LineHeight_24">24sp</dimen>
+    <dimen name="App_TextAppearance_Title_Medium_LineHeight_24">24sp</dimen>
+    <dimen name="App_TextAppearance_Title_Small_LineHeight_20">20sp</dimen>
+    <dimen name="App_TextAppearance_Body_Large_LineHeight_24">24sp</dimen>
+    <dimen name="App_TextAppearance_Body_Medium_LineHeight_20">20sp</dimen>
+    <dimen name="App_TextAppearance_Body_Small_LineHeight_16">16sp</dimen>
+    <dimen name="App_TextAppearance_Body_Extra_Small_LineHeight_16">16sp</dimen>
+    <dimen name="App_TextAppearance_Label_Large_LineHeight_20">20sp</dimen>
+    <dimen name="App_TextAppearance_Label_Medium_LineHeight_16">16sp</dimen>
+    <dimen name="App_TextAppearance_Label_Small_LineHeight_16">16sp</dimen>
+    <!--Theme typography dimens ends here -->
     <dimen name="def_height">50dp</dimen>
     <dimen name="dp_10">10dp</dimen>
     <dimen name="dp_4">4dp</dimen>

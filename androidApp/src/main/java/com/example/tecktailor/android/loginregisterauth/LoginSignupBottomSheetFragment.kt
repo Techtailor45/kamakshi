@@ -95,6 +95,7 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
                         val userUid = FirebaseAuth.getInstance().currentUser?.uid
                         if (userUid != null) {
                             //TODO
+                            showToast("Login Successful")
 //                            userViewModel.fetchUser(userUid)
 //                            userViewModel.fetchUser.collect { data ->
 //                                if (data.data != null) {
@@ -120,14 +121,15 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         lifecycleScope.launch {
-//            registerViewModel.registerMessage.collect { registerDetailsState ->
-//                when {
-//                    registerDetailsState.isLoading -> {
-//                        showLoading()
-//                    }
-//
-//                    registerDetailsState.data != null -> {
-//                        hideLoading()
+            registerViewModel.registerMessage.collect { registerDetailsState ->
+                when {
+                    registerDetailsState.isLoading -> {
+                        showLoading()
+                    }
+
+                    registerDetailsState.data != null -> {
+                        hideLoading()
+                        showToast("Registration Successfull")
 //                        val newUser = UserBusiness(
 //                            oId = FirebaseAuth.getInstance().currentUser?.uid,
 //                            cAt = System.currentTimeMillis(),
@@ -146,19 +148,19 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
 //                                navigateToHomeScreen()
 //                            }
 //                        }
-//
-//                    }
-//
-//                    registerDetailsState.error.isNotEmpty() -> {
-//                        showToast(registerDetailsState.error)
-//                        hideLoading()
-//                    }
-//
-//                    else -> {
-//                        // Handle other cases
-//                    }
-//                }
-//            }
+
+                    }
+
+                    registerDetailsState.error.isNotEmpty() -> {
+                        showToast(registerDetailsState.error)
+                        hideLoading()
+                    }
+
+                    else -> {
+                        // Handle other cases
+                    }
+                }
+            }
 
         }
 
