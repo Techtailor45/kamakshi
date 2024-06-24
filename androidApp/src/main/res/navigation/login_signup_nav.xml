@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_signup_nav"
+    app:startDestination="@id/userTypeSelectionFragment">
+
+    <fragment
+        android:id="@+id/userTypeSelectionFragment"
+        android:name="com.example.tecktailor.android.loginregisterauth.UserTypeSelectionFragment"
+        android:label="UserTypeSelectionFragment">
+
+        <action
+            android:id="@+id/action_userTypeSelectionFragment_to_loginSignupFragment"
+            app:destination="@id/loginSignupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginSignupFragment"
+        android:name="com.example.tecktailor.android.loginregisterauth.LoginSignUpFragment"
+        android:label="LoginSignUpFragment" />
+</navigation>

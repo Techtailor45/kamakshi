@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    login/sign-up-->
+    <!--    login/sign-up-->
     <string name="help">Help</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="sign_in_with_phone_number">Sign in with Number</string>
@@ -27,7 +27,7 @@
     <string name="login">Login</string>
     <string name="create_btn">Create Account</string>
 
-<!--    Login/SignUp Error Strings-->
+    <!--    Login/SignUp Error Strings-->
     <string name="emptyFieldError">Email or Password cannot be empty!</string>
     <string name="invalidEmailError">Please enter a valid email!</string>
     <string name="emailNotFoundError">Email not found in our database</string>
@@ -43,9 +43,14 @@
     <string name="invalidNameError">Please enter a valid name!</string>
 
 
-<!--    Login/SignUp Success messages-->
+    <!--    Login/SignUp Success messages-->
     <string name="loggedInSuccessfully">Login Successfully</string>
     <string name="signInSuccessfully">SignIn Successfully</string>
     <string name="registrationSuccess">Registration successful!</string>
+
+    <!--   Select User Type Strings-->
+    <string name="select_user_type">Select User Type</string>
+    <string name="customer">Customer</string>
+    <string name="admin">Admin</string>
 
 </resources>
