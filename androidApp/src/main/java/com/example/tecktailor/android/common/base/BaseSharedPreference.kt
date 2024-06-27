@@ -3,7 +3,7 @@ package com.example.tecktailor.android.common.base
 import android.content.Context
 import android.content.SharedPreferences
 
-class BaseSharedPreferences(context: Context) {
+class BaseSharedPreference(context: Context) {
 
     private val sharedPreferences: SharedPreferences =
         context.getSharedPreferences("my_shared_prefs", Context.MODE_PRIVATE)

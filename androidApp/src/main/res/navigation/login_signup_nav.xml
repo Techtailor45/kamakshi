@@ -5,11 +5,12 @@
     android:id="@+id/login_signup_nav"
     app:startDestination="@id/userTypeSelectionFragment">
 
+
     <fragment
         android:id="@+id/userTypeSelectionFragment"
         android:name="com.example.tecktailor.android.loginregisterauth.UserTypeSelectionFragment"
-        android:label="UserTypeSelectionFragment">
-
+        android:label="fragment_user_type_selection"
+        tools:layout="@layout/fragment_user_type_selection">
         <action
             android:id="@+id/action_userTypeSelectionFragment_to_loginSignupFragment"
             app:destination="@id/loginSignupFragment" />
@@ -18,5 +19,6 @@
     <fragment
         android:id="@+id/loginSignupFragment"
         android:name="com.example.tecktailor.android.loginregisterauth.LoginSignUpFragment"
-        android:label="LoginSignUpFragment" />
+        android:label="fragment_login_signup"
+        tools:layout="@layout/activity_login_sign_up" />
 </navigation>

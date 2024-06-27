@@ -26,10 +26,12 @@ class UserTypeSelectionFragment : BaseFragment<FragmentUserTypeSelectionBinding>
         binding?.apply {
             cardCustomer.setOnClickListener {
                 //TODO when customer is selected
+                navigateToLoginSignUpFragment()
 
             }
             cardAdmin.setOnClickListener {
                 //TODO when admin is selected
+                navigateToLoginSignUpFragment()
 
             }
 

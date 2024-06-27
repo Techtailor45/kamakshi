@@ -36,10 +36,10 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
-firebase-service-auth ={module = "com.google.android.gms:play-services-auth"}
+firebase-service-auth = { module = "com.google.android.gms:play-services-auth" }
 
 #location
-android-location = {module = "com.google.android.gms:play-services-location", version.ref = "location"}
+android-location = { module = "com.google.android.gms:play-services-location", version.ref = "location" }
 
 # Accompanist
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version = "20.6.0" }
@@ -51,10 +51,11 @@ play-services-auth = { group = "com.google.android.gms", name = "play-services-a
 #custom-indicator = {module = "com.github.ronaldsmartin:Material-ViewPagerIndicator", version.ref = "indicator"}
 
 # Koin
-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin"}
-koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin"}
-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin"}
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-databinding-common = { group = "androidx.databinding", name = "databinding-common", version.ref = "databindingCommon" }
 
@@ -63,10 +64,10 @@ glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 
 # KotlinX
-kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines"}
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 #kotlinx-coroutinesandroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines"}
-kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "serialization"}
-kotlinx-serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization"}
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "serialization" }
+kotlinx-serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 
 #others
 google-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }

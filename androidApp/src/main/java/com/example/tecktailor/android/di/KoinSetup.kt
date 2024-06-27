@@ -19,6 +19,7 @@ fun setupKoin(application: Application) = startKoin {
         PresentationModule, //view models
         DomainModulePlatform,//ktor
         DataModulePlatform,//firebase
+        AppModule,//SharedPreference
 
     )
 }
