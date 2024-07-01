@@ -9,14 +9,16 @@
         android:allowBackup="false"
         android:supportsRtl="true"
         android:theme="@style/App.Theme.Light.Default">
+
         <activity
-            android:name=".landingScreen.HomeActivity"
+            android:name=".loginregisterauth.LoginSignUpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity android:name=".landingScreen.HomeActivity" />-->
+
+        <activity android:name=".landingScreen.HomeActivity" />
     </application>
 </manifest> 

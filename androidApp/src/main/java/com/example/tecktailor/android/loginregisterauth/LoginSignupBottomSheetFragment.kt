@@ -10,7 +10,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.tecktailor.android.R
+import com.example.tecktailor.android.common.base.BaseActivity
 import com.example.tecktailor.android.databinding.FragmentLoginSignUpBottomSheetBinding
+import com.example.tecktailor.android.landingScreen.HomeActivity
 import com.example.tecktailor.domain.model.LoginInputValidationType
 import com.example.tecktailor.domain.model.RegisterInputValidationType
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -33,7 +35,8 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentLoginSignUpBottomSheetBinding
     private var isFullScreen = false
-//    private lateinit var auth: FirebaseAuth
+
+    //    private lateinit var auth: FirebaseAuth
     private var shouldShowSignUp = false
     private var instanceId = ""
 
@@ -94,9 +97,16 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
                         hideLoading()
                         val userUid = FirebaseAuth.getInstance().currentUser?.uid
                         if (userUid != null) {
-                            //TODO
-                            //TODO show business setup flow if user type is admin and no busiess present]l
+                            //TODO if user type is admin
+                            //TODO show business setup flow if user type is admin and no busiess present else show business to select screen
+
+                            //TODO if user type is customer
+                            //TODO show customer flow
+
                             showToast("Login Successful")
+                            (requireActivity() as BaseActivity).openActivityAndFinishCurrent(
+                                HomeActivity::class.java
+                            )
 //                            userViewModel.fetchUser(userUid)
 //                            userViewModel.fetchUser.collect { data ->
 //                                if (data.data != null) {

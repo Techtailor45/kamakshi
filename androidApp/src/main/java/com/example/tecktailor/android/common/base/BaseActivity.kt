@@ -1,6 +1,7 @@
 package com.example.tecktailor.android.common.base
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -127,5 +128,18 @@ abstract class BaseActivity : AppCompatActivity() {
                 }
             }
             .commit()
+    }
+
+    // Function to open another activity and finish the current activity
+    fun openActivityAndFinishCurrent(activityClass: Class<*>) {
+        val intent = Intent(this, activityClass)
+        startActivity(intent)
+        finish()
+    }
+
+    // Function to open another activity without finishing the current activity
+    fun openActivity(activityClass: Class<*>) {
+        val intent = Intent(this, activityClass)
+        startActivity(intent)
     }
 }
