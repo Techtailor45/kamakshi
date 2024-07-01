@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.play.services.auth)
     implementation(libs.glide)
     implementation(libs.firebase.auth)
+    implementation(libs.androidx.navigation.fragment)
     annotationProcessor(libs.glide.compiler)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)

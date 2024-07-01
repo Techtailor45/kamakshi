@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_store">
+
+    <fragment
+        android:id="@+id/navigation_store"
+        android:name="com.example.tecktailor.android.landingScreen.fragments.StoreFragment"
+        android:label="@string/my_store"
+        tools:layout="@layout/fragment_store">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_my_orders"
+        android:name="com.example.tecktailor.android.landingScreen.fragments.MyOrdersFragment"
+        android:label="@string/orders"
+        tools:layout="@layout/fragment_my_orders" />
+</navigation>

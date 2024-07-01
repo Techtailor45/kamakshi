@@ -21,6 +21,7 @@ coroutines = "1.6.1"
 gson = "2.10.1"
 androidx-appcompat = "1.7.0"
 firebase-auth = "23.0.0"
+navigationFragment = "2.7.7"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -73,6 +74,7 @@ kotlinx-serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serializat
 google-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebase-auth" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -95,6 +95,7 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
                         val userUid = FirebaseAuth.getInstance().currentUser?.uid
                         if (userUid != null) {
                             //TODO
+                            //TODO show business setup flow if user type is admin and no busiess present]l
                             showToast("Login Successful")
 //                            userViewModel.fetchUser(userUid)
 //                            userViewModel.fetchUser.collect { data ->
