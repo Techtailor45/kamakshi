@@ -11,7 +11,7 @@
         android:theme="@style/App.Theme.Light.Default">
 
         <activity
-            android:name=".loginregisterauth.LoginSignUpActivity"
+            android:name=".landingScreen.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +19,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".landingScreen.HomeActivity" />
+<!--        <activity android:name=".landingScreen.HomeActivity" />-->
     </application>
 </manifest> 

@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--   Home Drawer Strings-->
+    <string name="config_app_name" translatable="false">Tech Tailor</string>
+    <string name="edit_business">Edit Business</string>
+    <string name="free_plan">Free Plan</string>
+    <string name="upgrade_to_premium_plans">Upgrade to Premium Plans</string>
+    <string name="premium_plan">Premium Plan</string>
+    <string name="subscription_status_on_premium_plan">You are on Premium Plan</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="create_business">Create Business</string>
+    <string name="switch_business">Switch Business</string>
+    <string name="management_navigation">Management</string>
+
     <!--    login/sign-up-->
     <string name="help">Help</string>
     <string name="sign_in_with_google">Sign in with Google</string>
@@ -56,5 +68,7 @@
     <!--Home Base Strings-->
     <string name="my_store">My Store </string>
     <string name="orders">Orders</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
 
 </resources>

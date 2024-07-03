@@ -421,4 +421,9 @@
         <item name="fontFamily">@font/lato_medium</item>
     </style>
 
+    <style name="LeagueSpartan_Bold">
+        <item name="android:fontFamily">@font/leaguespartan_bold</item>
+        <item name="fontFamily">@font/leaguespartan_bold</item>
+    </style>
+
 </resources>

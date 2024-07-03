@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/management_navigation">
+        <menu>
+            <item
+                android:id="@+id/nav_switch_business"
+                android:icon="@drawable/ic_phone"
+                android:title="Switch Business" />
+            <item
+                android:id="@+id/nav_sign_out"
+                android:icon="@drawable/ic_admin"
+                android:title="Sign Out" />
+            <!-- Add more items as needed -->
+        </menu>
+    </item>
+</menu>
