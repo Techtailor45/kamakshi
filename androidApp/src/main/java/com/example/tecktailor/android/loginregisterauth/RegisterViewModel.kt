@@ -4,17 +4,20 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tecktailor.android.R
+import com.example.tecktailor.android.common.base.BaseSharedPreference
 import com.example.tecktailor.core.Resource
 import com.example.tecktailor.domain.model.RegisterInputValidationType
 import com.example.tecktailor.domain.usecase.ValidateRegisterInputUseCase
+import com.example.tecktailor.utils.Constants
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.io.IOException
 
-class RegisterViewModel constructor(
+class RegisterViewModel(
     private val context: Context,
-    private val registerUseCase: ValidateRegisterInputUseCase
+    private val registerUseCase: ValidateRegisterInputUseCase,
+    private val sharedPreference: BaseSharedPreference
 ) : ViewModel()
 {
     private val _registerMessage = MutableStateFlow(RegisterDetailsState())
@@ -72,8 +75,11 @@ class RegisterViewModel constructor(
                 when (registerResult) {
                     is Resource.Success -> {
                         when (registerResult.data) {
-                            "success" -> _registerMessage.value =
-                                RegisterDetailsState(data = context.getString(R.string.registrationSuccess))
+                            "success" -> {
+                                sharedPreference.put(Constants.IS_USER_LOGGED_IN, true)
+                                _registerMessage.value =
+                                    RegisterDetailsState(data = context.getString(R.string.registrationSuccess))
+                            }
 
                             "weak password" -> _registerMessage.value =
                                 RegisterDetailsState(error = context.getString(R.string.weakPasswordError))

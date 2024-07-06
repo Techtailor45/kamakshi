@@ -25,8 +25,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
-    private val loginViewModel: LoginViewModel by viewModel()
-    private val registerViewModel: RegisterViewModel by viewModel()
 //    private val userViewModel: UserViewModel by viewModel()
 //    private val stateViewModel: StateViewModel by viewModel()
 
@@ -87,7 +85,7 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         lifecycleScope.launch {
-            loginViewModel.loginMessage.collect { loginDetailsState ->
+            (requireActivity() as LoginSignUpActivity).loginViewModel.loginMessage.collect { loginDetailsState ->
                 when {
                     loginDetailsState.isLoading -> {
                         showLoading()
@@ -132,7 +130,7 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         lifecycleScope.launch {
-            registerViewModel.registerMessage.collect { registerDetailsState ->
+            (requireActivity() as LoginSignUpActivity).registerViewModel.registerMessage.collect { registerDetailsState ->
                 when {
                     registerDetailsState.isLoading -> {
                         showLoading()
@@ -140,7 +138,8 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
 
                     registerDetailsState.data != null -> {
                         hideLoading()
-                        showToast("Registration Successfull")
+                        val userUid = FirebaseAuth.getInstance().currentUser?.uid
+                        if (userUid != null) {
 //                        val newUser = UserBusiness(
 //                            oId = FirebaseAuth.getInstance().currentUser?.uid,
 //                            cAt = System.currentTimeMillis(),
@@ -159,7 +158,12 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
 //                                navigateToHomeScreen()
 //                            }
 //                        }
+                            showToast("Registration Successfull")
+                            (requireActivity() as BaseActivity).openActivityAndFinishCurrent(
+                                HomeActivity::class.java
+                            )
 
+                        }
                     }
 
                     registerDetailsState.error.isNotEmpty() -> {
@@ -211,7 +215,7 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
         val email = binding.etEmailId.text.toString()
         val password = binding.etPassword.text.toString()
 
-        val (validationType, errorMessage) = registerViewModel.validateRegisterForm(
+        val (validationType, errorMessage) = (requireActivity() as LoginSignUpActivity).registerViewModel.validateRegisterForm(
             name,
             email,
             password
@@ -223,7 +227,11 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
 
         if (validationType == RegisterInputValidationType.Valid) {
             lifecycleScope.launch {
-                registerViewModel.registerUser(name, email, password)
+                (requireActivity() as LoginSignUpActivity).registerViewModel.registerUser(
+                    name,
+                    email,
+                    password
+                )
             }
         }
     }
@@ -234,7 +242,10 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
         val passwordEditText = binding.etPassword
         val email = emailEditText.text.toString()
         val password = passwordEditText.text.toString()
-        val (validationType, errorMessage) = loginViewModel.validateLoginForm(email, password)
+        val (validationType, errorMessage) = (requireActivity() as LoginSignUpActivity).loginViewModel.validateLoginForm(
+            email,
+            password
+        )
 
         if (errorMessage != null) {
             showToast(errorMessage)
@@ -243,7 +254,7 @@ class LoginSignupBottomSheetFragment : BottomSheetDialogFragment() {
 
         if (validationType == LoginInputValidationType.Valid) {
             lifecycleScope.launch {
-                loginViewModel.loginUser(email, password)
+                (requireActivity() as LoginSignUpActivity).loginViewModel.loginUser(email, password)
             }
         }
     }

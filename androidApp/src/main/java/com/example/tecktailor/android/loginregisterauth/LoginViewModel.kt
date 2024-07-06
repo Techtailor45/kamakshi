@@ -4,20 +4,23 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tecktailor.android.R
+import com.example.tecktailor.android.common.base.BaseSharedPreference
 import com.example.tecktailor.core.Resource
 import com.example.tecktailor.domain.model.LoginInputValidationType
 import com.example.tecktailor.domain.usecase.ValidateLoginInputUseCase
+import com.example.tecktailor.utils.Constants
+import com.example.tecktailor.utils.Constants.IS_USER_LOGGED_IN
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.io.IOException
 
 
-class LoginViewModel constructor(
+class LoginViewModel(
     private val context: Context,
-    private val loginUseCase: ValidateLoginInputUseCase
-) : ViewModel()
-{
+    private val loginUseCase: ValidateLoginInputUseCase,
+    private val sharedPreference: BaseSharedPreference,
+) : ViewModel() {
     private val _loginMessage = MutableStateFlow(LoginDetailsState())
     val loginMessage: StateFlow<LoginDetailsState> = _loginMessage
 
@@ -53,6 +56,7 @@ class LoginViewModel constructor(
                     is Resource.Success -> {
                         when (loginResult.data) {
                             "login Success" -> {
+                                sharedPreference.put(IS_USER_LOGGED_IN, true)
                                 _loginMessage.value =
                                     LoginDetailsState(data = context.getString(R.string.loggedInSuccessfully))
                             }
@@ -91,5 +95,9 @@ class LoginViewModel constructor(
                     LoginDetailsState(error = context.getString(R.string.unknownError))
             }
         }
+    }
+
+    fun isUserLoggedIn(): Boolean {
+        return sharedPreference.getBoolean(IS_USER_LOGGED_IN)
     }
 }

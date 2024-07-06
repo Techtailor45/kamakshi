@@ -71,4 +71,11 @@
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
 
+<!--    Base Dialog Box Strings-->
+    <string name="cancel_btn">Cancel</string>
+    <string name="confirm_btn">Confirm</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="sign_out_confirmation_message">Are you Sure you want to Sign out?</string>
+
+
 </resources>

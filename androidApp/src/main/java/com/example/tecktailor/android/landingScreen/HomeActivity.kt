@@ -1,5 +1,6 @@
 package com.example.tecktailor.android.landingScreen
 
+import android.content.Context
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -10,14 +11,19 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.tecktailor.android.R
 import com.example.tecktailor.android.common.base.BaseActivity
+import com.example.tecktailor.android.common.base.BaseDialogBox
 import com.example.tecktailor.android.databinding.ActivityHomeBinding
+import com.example.tecktailor.android.databinding.BaseDialogBoxBinding
+import com.example.tecktailor.android.loginregisterauth.RegisterViewModel
 import com.google.android.material.navigation.NavigationView
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var mNavController: NavController
     private lateinit var drawerToggle: ActionBarDrawerToggle
+    private val signOutViewModel: SignOutViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +48,7 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     private fun setupDrawer() {
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.title = getString(R.string.config_app_name)
         drawerToggle = ActionBarDrawerToggle(
             this,
             binding.drawerLayout,
@@ -63,7 +70,11 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             }
 
             R.id.nav_sign_out -> {
-                // Handle navigation to item two
+                // Handle navigation for sign_out
+                showConfirmationDialog(
+                    getString(R.string.confirmation),
+                    getString(R.string.sign_out_confirmation_message)
+                )
                 true
             }
             // Add more items as needed
@@ -71,6 +82,23 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun showConfirmationDialog(
+        title: String,
+        description: String,
+    ) {
+        BaseDialogBox(this).apply {
+            setTitle(title)
+            setDescriptionMessage(description)
+            setConfirmClickListener {
+                signOutViewModel.signOut()
+                // Close the application
+                finishAffinity()
+            }
+            setCancelClickListener {
+            }
+        }.show()
     }
 
     override fun onBackPressed() {

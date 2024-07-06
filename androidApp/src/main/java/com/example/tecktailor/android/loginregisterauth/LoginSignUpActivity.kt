@@ -8,19 +8,26 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.tecktailor.android.R
 import com.example.tecktailor.android.common.base.BaseActivity
+import com.example.tecktailor.android.landingScreen.HomeActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginSignUpActivity : BaseActivity() {
     //    private val firebaseConfigViewModel: FirebaseConfigViewModel by viewModel()
+    val loginViewModel: LoginViewModel by viewModel()
+    val registerViewModel: RegisterViewModel by viewModel()
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (loginViewModel.isUserLoggedIn()) {
+            openActivityAndFinishCurrent(HomeActivity::class.java)
+        }
         navController.setGraph(R.navigation.login_signup_nav)
         auth = FirebaseAuth.getInstance()
 

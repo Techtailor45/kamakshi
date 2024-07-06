@@ -426,4 +426,13 @@
         <item name="fontFamily">@font/leaguespartan_bold</item>
     </style>
 
+    <!--    Base Dialog Box Style-->
+    <style name="App.TextAppearance.DialogBox.Confirm" parent="App.TextAppearance.Title.Medium.BasePrimaryTextColor" />
+
+    <style name="App.TextAppearance.DialogBox.Cancel" parent="App.TextAppearance.Title.Medium.PrimaryTextColor" />
+
+    <style name="App.TextAppearance.DialogBox.Title" parent="App.TextAppearance.Title.Large.PrimaryTextColor" />
+
+    <style name="App.TextAppearance.DialogBox.Description" parent="App.TextAppearance.Body.Medium.DisabledTextColor" />
+
 </resources>
