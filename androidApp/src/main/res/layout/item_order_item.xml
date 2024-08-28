@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- Define the variable for the OrderItem data -->
+        <variable
+            name="orderItem"
+            type="com.example.tecktailor.domain.model.OrderItem" />
+
+        <variable
+            name="isChecked"
+            type="Boolean" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <!-- TextView for Item Name -->
+            <TextView
+                android:id="@+id/itemNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{orderItem.name}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Item Name" />
+
+            <!-- TextView for Garment Type -->
+            <TextView
+                android:id="@+id/garmentTypeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Garment Type: " + orderItem.garmentType}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemNameTextView"
+                tools:text="Garment type" />
+
+            <!-- TextView for Measurements -->
+            <TextView
+                android:id="@+id/measurementsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Measurements: Chest " + orderItem.measurements.chest + ", Waist " + orderItem.measurements.waist + ", Hips " + orderItem.measurements.hips + ", Inseam " + orderItem.measurements.inseam + ", Sleeve Length " + orderItem.measurements.sleeveLength + ", Shoulder Width " + orderItem.measurements.shoulderWidth}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/garmentTypeTextView"
+                tools:text="Measurement: " />
+
+            <!-- TextView for Quantity -->
+            <TextView
+                android:id="@+id/quantityTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Quantity: " + orderItem.quantity}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/measurementsTextView"
+                tools:text="Quantity: 2" />
+
+            <!-- TextView for Notes -->
+            <TextView
+                android:id="@+id/notesTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Notes: " + orderItem.notes}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/quantityTextView"
+                tools:text="Note: " />
+
+            <!-- TextView for Price Per Item -->
+            <TextView
+                android:id="@+id/pricePerItemTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Price: $" + String.format("%.2f", orderItem.pricePerItem)}'
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notesTextView"
+                tools:text="Unit price : " />
+
+            <!-- CheckBox for Completion -->
+            <CheckBox
+                android:id="@+id/completedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:checked="@{isChecked}"
+                android:text="Completed"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pricePerItemTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

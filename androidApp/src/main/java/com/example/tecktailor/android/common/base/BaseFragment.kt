@@ -90,4 +90,20 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     protected open fun restoreInstanceState(savedInstanceState: Bundle?) {
         // Restore fragment-specific data if needed
     }
+
+    /**
+     * Adds a fragment to the container with an option to add it to the back stack.
+     * @param fragment The fragment to add.
+     * @param addToBackStack Whether to add the transaction to the back stack.
+     * @param tag Optional tag for the fragment.
+     */
+    fun addFragment(fragment: Fragment, addToBackStack: Boolean, tag: String? = null) {
+        parentFragmentManager.beginTransaction().apply {
+            replace(android.R.id.content, fragment) // You can use your fragment container id here
+            if (addToBackStack) {
+                addToBackStack(tag)
+            }
+            commit()
+        }
+    }
 }

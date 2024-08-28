@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- Define the variable for the Order data -->
+        <variable
+            name="order"
+            type="com.example.tecktailor.domain.model.Order" />
+
+        <variable
+            name="onClick"
+            type="com.example.tecktailor.utils.interfaces.IViewClicked" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:onClick="@{() -> onClick.onClick()}"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <!-- ImageView for Customer Image -->
+            <ImageView
+                android:id="@+id/customerImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_orders"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- TextView for Order Title -->
+            <TextView
+                android:id="@+id/orderTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{order.title}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/customerImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Order Title" />
+
+            <!-- TextView for Customer Name -->
+            <TextView
+                android:id="@+id/customerNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{order.customerName}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/orderTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/orderTitleTextView"
+                tools:text="Customer Name" />
+
+            <!-- TextView for Delivery Date -->
+            <TextView
+                android:id="@+id/deliveryDateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Delivery Date: " + order.deliveryDate}'
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/customerNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/customerNameTextView"
+                tools:text="Delivery Date" />
+
+            <!-- TextView for Total Price -->
+            <TextView
+                android:id="@+id/totalPriceTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Total: $" + String.format("%.2f", order.totalPrice)}'
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/deliveryDateTextView"
+                app:layout_constraintTop_toBottomOf="@id/deliveryDateTextView"
+                tools:text="Total Price: $1" />
+
+            <!-- TextView for Total Items -->
+            <TextView
+                android:id="@+id/totalItemsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"Total Items: " + order.items.size}'
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/totalPriceTextView"
+                app:layout_constraintTop_toBottomOf="@id/totalPriceTextView"
+                tools:text="Order Items: 2" />
+
+            <!-- TextView for View Items Indicator -->
+            <TextView
+                android:id="@+id/viewItemsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="View Items"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/totalItemsTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
